@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the MC hub and spoke feature.
+ */
+
+include_once 'mc_hub_and_spoke.features.inc';
