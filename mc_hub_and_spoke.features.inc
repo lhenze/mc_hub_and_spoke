@@ -61,5 +61,6 @@ function mc_hub_and_spoke_node_info() {
       'help' => '',
     ),
   );
+  drupal_alter('node_info', $items);
   return $items;
 }

@@ -23,41 +23,17 @@ function mc_hub_and_spoke_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'babyzen' => array(
+      'mediacommons' => array(
         'region' => '',
         'status' => 0,
-        'theme' => 'babyzen',
-        'weight' => -14,
-      ),
-      'bartik' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bartik',
-        'weight' => 0,
+        'theme' => 'mediacommons',
+        'weight' => -17,
       ),
       'rubik' => array(
         'region' => '',
         'status' => 0,
         'theme' => 'rubik',
         'weight' => 0,
-      ),
-      'seven' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'seven',
-        'weight' => 0,
-      ),
-      'tao' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'tao',
-        'weight' => 0,
-      ),
-      'tne' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'tne',
-        'weight' => -18,
       ),
       'zen' => array(
         'region' => '',
@@ -79,41 +55,17 @@ function mc_hub_and_spoke_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'babyzen' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'babyzen',
-        'weight' => 0,
-      ),
-      'bartik' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bartik',
-        'weight' => 0,
+      'mediacommons' => array(
+        'region' => 'sidebar_previous_clusters',
+        'status' => 1,
+        'theme' => 'mediacommons',
+        'weight' => -17,
       ),
       'rubik' => array(
         'region' => '',
         'status' => 0,
         'theme' => 'rubik',
         'weight' => 0,
-      ),
-      'seven' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'seven',
-        'weight' => 0,
-      ),
-      'tao' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'tao',
-        'weight' => 0,
-      ),
-      'tne' => array(
-        'region' => 'sidebar_previous_clusters',
-        'status' => 1,
-        'theme' => 'tne',
-        'weight' => -18,
       ),
       'zen' => array(
         'region' => '',
@@ -135,40 +87,16 @@ function mc_hub_and_spoke_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'babyzen' => array(
+      'mediacommons' => array(
         'region' => '',
         'status' => 0,
-        'theme' => 'babyzen',
-        'weight' => 0,
-      ),
-      'bartik' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bartik',
+        'theme' => 'mediacommons',
         'weight' => 0,
       ),
       'rubik' => array(
         'region' => '',
         'status' => 0,
         'theme' => 'rubik',
-        'weight' => 0,
-      ),
-      'seven' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'seven',
-        'weight' => 0,
-      ),
-      'tao' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'tao',
-        'weight' => 0,
-      ),
-      'tne' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'tne',
         'weight' => 0,
       ),
       'zen' => array(
@@ -191,40 +119,16 @@ function mc_hub_and_spoke_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'babyzen' => array(
+      'mediacommons' => array(
         'region' => '',
         'status' => 0,
-        'theme' => 'babyzen',
-        'weight' => -15,
-      ),
-      'bartik' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bartik',
+        'theme' => 'mediacommons',
         'weight' => 0,
       ),
       'rubik' => array(
         'region' => '',
         'status' => 0,
         'theme' => 'rubik',
-        'weight' => 0,
-      ),
-      'seven' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'seven',
-        'weight' => 0,
-      ),
-      'tao' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'tao',
-        'weight' => 0,
-      ),
-      'tne' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'tne',
         'weight' => 0,
       ),
       'zen' => array(
@@ -247,40 +151,16 @@ function mc_hub_and_spoke_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'babyzen' => array(
+      'mediacommons' => array(
         'region' => 'homepage_top',
         'status' => 1,
-        'theme' => 'babyzen',
-        'weight' => 0,
-      ),
-      'bartik' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bartik',
+        'theme' => 'mediacommons',
         'weight' => 0,
       ),
       'rubik' => array(
         'region' => '',
         'status' => 0,
         'theme' => 'rubik',
-        'weight' => 0,
-      ),
-      'seven' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'seven',
-        'weight' => 0,
-      ),
-      'tao' => array(
-        'region' => 'sidebar_first',
-        'status' => 1,
-        'theme' => 'tao',
-        'weight' => 0,
-      ),
-      'tne' => array(
-        'region' => 'homepage_top',
-        'status' => 1,
-        'theme' => 'tne',
         'weight' => 0,
       ),
       'zen' => array(

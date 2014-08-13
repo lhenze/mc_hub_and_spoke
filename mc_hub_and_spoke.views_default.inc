@@ -13,7 +13,7 @@ function mc_hub_and_spoke_views_default_views() {
   $view = new view();
   $view->name = 'all_spokes_in_this_spokes_hub';
   $view->description = 'For Spokes pages: the sidebar navigation';
-  $view->tag = 'default';
+  $view->tag = 'spoke page';
   $view->base_table = 'node';
   $view->human_name = 'All Spokes in this Spoke\'s Hub';
   $view->core = 7;
@@ -89,6 +89,84 @@ function mc_hub_and_spoke_views_default_views() {
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block');
   $export['all_spokes_in_this_spokes_hub'] = $view;
+
+  $view = new view();
+  $view->name = 'mc_recent_comments';
+  $view->description = 'All recent comments throughout this site';
+  $view->tag = 'any page';
+  $view->base_table = 'comment';
+  $view->human_name = 'Recent comments';
+  $view->core = 0;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'Recent comments';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'none';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['query']['options']['query_comment'] = FALSE;
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '8';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['style_plugin'] = 'list';
+  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
+  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
+  $handler->display->display_options['style_options']['wrapper_class'] = '';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['inline'] = array(
+    'timestamp' => 'timestamp',
+    'name' => 'name',
+  );
+  $handler->display->display_options['row_options']['hide_empty'] = TRUE;
+  /* Relationship: Comment: Content */
+  $handler->display->display_options['relationships']['nid']['id'] = 'nid';
+  $handler->display->display_options['relationships']['nid']['table'] = 'comment';
+  $handler->display->display_options['relationships']['nid']['field'] = 'nid';
+  /* Field: Comment: Title */
+  $handler->display->display_options['fields']['subject']['id'] = 'subject';
+  $handler->display->display_options['fields']['subject']['table'] = 'comment';
+  $handler->display->display_options['fields']['subject']['field'] = 'subject';
+  $handler->display->display_options['fields']['subject']['label'] = '';
+  /* Field: Comment: Updated date */
+  $handler->display->display_options['fields']['timestamp']['id'] = 'timestamp';
+  $handler->display->display_options['fields']['timestamp']['table'] = 'comment';
+  $handler->display->display_options['fields']['timestamp']['field'] = 'changed';
+  $handler->display->display_options['fields']['timestamp']['label'] = '';
+  $handler->display->display_options['fields']['timestamp']['date_format'] = 'time ago';
+  /* Field: Comment: Author */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'comment';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['label'] = '';
+  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
+  /* Field: Comment: Comment */
+  $handler->display->display_options['fields']['comment_body']['id'] = 'comment_body';
+  $handler->display->display_options['fields']['comment_body']['table'] = 'field_data_comment_body';
+  $handler->display->display_options['fields']['comment_body']['field'] = 'comment_body';
+  $handler->display->display_options['fields']['comment_body']['label'] = '';
+  $handler->display->display_options['fields']['comment_body']['alter']['max_length'] = '100';
+  $handler->display->display_options['fields']['comment_body']['alter']['trim'] = TRUE;
+  $handler->display->display_options['fields']['comment_body']['alter']['html'] = TRUE;
+  $handler->display->display_options['fields']['comment_body']['element_label_colon'] = FALSE;
+  /* Sort criterion: Comment: Updated date */
+  $handler->display->display_options['sorts']['timestamp']['id'] = 'timestamp';
+  $handler->display->display_options['sorts']['timestamp']['table'] = 'comment';
+  $handler->display->display_options['sorts']['timestamp']['field'] = 'changed';
+  $handler->display->display_options['sorts']['timestamp']['order'] = 'DESC';
+  /* Filter criterion: Content: Published or admin */
+  $handler->display->display_options['filters']['status_extra']['id'] = 'status_extra';
+  $handler->display->display_options['filters']['status_extra']['table'] = 'node';
+  $handler->display->display_options['filters']['status_extra']['field'] = 'status_extra';
+  $handler->display->display_options['filters']['status_extra']['relationship'] = 'nid';
+  $handler->display->display_options['filters']['status_extra']['group'] = 0;
+
+  /* Display: Block */
+  $handler = $view->new_display('block', 'Block', 'block');
+  $export['mc_recent_comments'] = $view;
 
   $view = new view();
   $view->name = 'meta_for_spoke';
@@ -202,8 +280,8 @@ function mc_hub_and_spoke_views_default_views() {
 
   $view = new view();
   $view->name = 'my_parent_hub';
-  $view->description = 'Used as the header for  "All Spokes in this Spoke\'s Hub"';
-  $view->tag = 'default';
+  $view->description = 'Used as the header for  "All Spokes in this Spoke\'s Hub" sidebar nav';
+  $view->tag = 'spoke page';
   $view->base_table = 'node';
   $view->human_name = 'This spoke\'s parent hub';
   $view->core = 7;
@@ -270,7 +348,7 @@ function mc_hub_and_spoke_views_default_views() {
   $view = new view();
   $view->name = 'previous_hubs';
   $view->description = '';
-  $view->tag = 'default';
+  $view->tag = 'previous page';
   $view->base_table = 'node';
   $view->human_name = 'Previous Hubs';
   $view->core = 7;
@@ -347,17 +425,17 @@ Post date Desc|Newest first',
 
   $view = new view();
   $view->name = 'tochub';
-  $view->description = '';
-  $view->tag = 'default';
+  $view->description = 'For the homepage -- most recently published, "promoted" hub';
+  $view->tag = 'home page';
   $view->base_table = 'node';
-  $view->human_name = 'TOC-Hub';
+  $view->human_name = 'Table of Contents (Hub Full View)';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'TOC-Hub';
+  $handler->display->display_options['title'] = 'Table of Contents - Hub';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'none';
   $handler->display->display_options['cache']['type'] = 'none';
@@ -403,6 +481,11 @@ Post date Desc|Newest first',
   $handler->display->display_options['filters']['type']['value'] = array(
     'hub' => 'hub',
   );
+  /* Filter criterion: Content: Promoted to front page */
+  $handler->display->display_options['filters']['promote']['id'] = 'promote';
+  $handler->display->display_options['filters']['promote']['table'] = 'node';
+  $handler->display->display_options['filters']['promote']['field'] = 'promote';
+  $handler->display->display_options['filters']['promote']['value'] = '1';
 
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block');
@@ -414,7 +497,7 @@ Post date Desc|Newest first',
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'entity';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
-  $handler->display->display_options['block_description'] = 'Table of Contents';
+  $handler->display->display_options['block_description'] = 'Most recent "promoted" hub';
   $export['tochub'] = $view;
 
   return $export;

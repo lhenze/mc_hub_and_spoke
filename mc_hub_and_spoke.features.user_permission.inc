@@ -31,6 +31,15 @@ function mc_hub_and_spoke_user_default_permissions() {
     'module' => 'comment',
   );
 
+  // Exported permission: 'administer taxonomy'.
+  $permissions['administer taxonomy'] = array(
+    'name' => 'administer taxonomy',
+    'roles' => array(
+      'admin' => 'admin',
+    ),
+    'module' => 'taxonomy',
+  );
+
   // Exported permission: 'create hub content'.
   $permissions['create hub content'] = array(
     'name' => 'create hub content',
@@ -85,6 +94,15 @@ function mc_hub_and_spoke_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'delete terms in tags'.
+  $permissions['delete terms in tags'] = array(
+    'name' => 'delete terms in tags',
+    'roles' => array(
+      'admin' => 'admin',
+    ),
+    'module' => 'taxonomy',
+  );
+
   // Exported permission: 'edit any hub content'.
   $permissions['edit any hub content'] = array(
     'name' => 'edit any hub content',
@@ -131,6 +149,15 @@ function mc_hub_and_spoke_user_default_permissions() {
       'admin' => 'admin',
     ),
     'module' => 'node',
+  );
+
+  // Exported permission: 'edit terms in tags'.
+  $permissions['edit terms in tags'] = array(
+    'name' => 'edit terms in tags',
+    'roles' => array(
+      'admin' => 'admin',
+    ),
+    'module' => 'taxonomy',
   );
 
   // Exported permission: 'post comments'.
